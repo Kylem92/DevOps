@@ -7,15 +7,16 @@ import javax.swing.*;
 public class CA2{
 	public static void main(String args[])
 	{
-		dobValidator();
+		String dob = JOptionPane.showInputDialog("Please enter the date of birth in the form dd-mm-yyyy");
+		dobValidator(dob);
 	}
 
-	private static void dobValidator() {
-		String dob;
+	public static boolean dobValidator(String dob) {
+
 		boolean valid;
 		int month,day;
 
-		dob = JOptionPane.showInputDialog("Please enter the date of birth in the form dd-mm-yyyy");
+
 
 		valid = false;
 
@@ -46,9 +47,9 @@ public class CA2{
 								dob = JOptionPane.showInputDialog("Invalid! Too many days for this month value - Please re-enter");
 							else
 							{
-								valid = true;
-								JOptionPane.showMessageDialog(null,"The valid date of birth you supplied is " + dob,"Date of Birth",JOptionPane.INFORMATION_MESSAGE);
 
+								JOptionPane.showMessageDialog(null,"The valid date of birth you supplied is " + dob,"Date of Birth",JOptionPane.INFORMATION_MESSAGE);
+								valid = true;
 							}
 
 						}
@@ -70,6 +71,7 @@ public class CA2{
 		}
 
 		System.exit(0);
+		return true;
 
 	}
 }
