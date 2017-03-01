@@ -23,10 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="devops" />
+        <module name="pipeline" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="devops" target="1.8" />
+      <module name="pipeline" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
