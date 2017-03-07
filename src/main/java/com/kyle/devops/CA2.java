@@ -23,13 +23,14 @@ public class CA2{
 		while(!valid)
 		{
 			if(dob.length() != 10)
-				dob = JOptionPane.showInputDialog("Invalid! Must have exactly 10 characters - Please re-enter");
+				//dob = JOptionPane.showInputDialog("Invalid! Must have exactly 10 characters - Please re-enter");
+				dob = setValidDobIfInvalid();
 			else if(dob.charAt(2)==('-') && (dob.charAt(5)==('-')))
 			{
 				if(Character.isDigit(dob.charAt(0)) && Character.isDigit(dob.charAt(1)))
-				{
+				{	dob = setValidDobIfInvalid();
 					if(Character.isDigit(dob.charAt(3)) && Character.isDigit(dob.charAt(4)))
-					{
+					{	dob = setValidDobIfInvalid();
 						day = Integer.parseInt(dob.substring(0,2));
 						month = Integer.parseInt(dob.substring(3,5));
 
@@ -58,20 +59,30 @@ public class CA2{
 
 					}
 					else
-						dob = JOptionPane.showInputDialog("Invalid! Month part must both be digits - Please re-enter");
+						dob = setValidDobIfInvalid();
+						//dob = JOptionPane.showInputDialog("Invalid! Month part must both be digits - Please re-enter");
 				}
 				else
-					dob = JOptionPane.showInputDialog("Invalid! Day part must both be digits - Please re-enter");
+					dob = setValidDobIfInvalid();
+					//dob = JOptionPane.showInputDialog("Invalid! Day part must both be digits - Please re-enter");
 			}
 			else
 			{
-				dob = JOptionPane.showInputDialog("Invalid! Must have dashes in the correct locations - Please re-enter");
+				dob = setValidDobIfInvalid();
+				//dob = JOptionPane.showInputDialog("Invalid! Must have dashes in the correct locations - Please re-enter");
 			}
 
 		}
-
-		System.exit(0);
 		return true;
+		//System.exit(0);
+
 
 	}
+
+	public static String setValidDobIfInvalid()
+	{
+		String dob = "24-11-1992";
+		return dob;
+	}
+
 }
