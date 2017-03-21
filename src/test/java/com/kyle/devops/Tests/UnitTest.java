@@ -1,10 +1,10 @@
-package com.kyle.devopsTests;
+package com.kyle.devops.Tests;
 import com.kyle.devops.CA2;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class UnitTests {
+public class UnitTest {
     @Test
     public void checkIfDobIsValidTest()
     {

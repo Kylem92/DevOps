@@ -49,7 +49,7 @@ public class CA2{
 							else
 							{
 
-								JOptionPane.showMessageDialog(null,"The valid date of birth you supplied is " + dob,"Date of Birth",JOptionPane.INFORMATION_MESSAGE);
+								//JOptionPane.showMessageDialog(null,"The valid date of birth you supplied is " + dob,"Date of Birth",JOptionPane.INFORMATION_MESSAGE);
 								valid = true;
 							}
 
