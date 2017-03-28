@@ -7,7 +7,8 @@ import javax.swing.*;
 public class CA2{
 	public static void main(String args[])
 	{
-		String dob = JOptionPane.showInputDialog("Please enter the date of birth in the form dd-mm-yyyy");
+		//String dob = JOptionPane.showInputDialog("Please enter the date of birth in the form dd-mm-yyyy");
+		String dob = "24-11-1992";
 		dobValidator(dob);
 	}
 
