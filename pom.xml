@@ -40,14 +40,14 @@
             <properties>
                 <env>test</env>
                 <gebEnv>test</gebEnv>
-                <jacoco.skip>false</jacoco.skip>
+                <!--<jacoco.skip>false</jacoco.skip>-->
                 <maven.test.skip>false</maven.test.skip>
                 <skip.unit.tests>false</skip.unit.tests>
             </properties>
         </profile>
     </profiles>
 
-    <reporting>
+    <!--<reporting>
         <plugins>
             <plugin>
                 <groupId>org.jacoco</groupId>
@@ -56,14 +56,14 @@
                 <reportSets>
                     <reportSet>
                         <reports>
-                            <!-- select non-aggregate reports -->
+
                             <report>report</report>
                         </reports>
                     </reportSet>
                 </reportSets>
             </plugin>
         </plugins>
-    </reporting>
+    </reporting>-->
 
     <build>
         <plugins>
@@ -85,7 +85,7 @@
                     <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
                 </configuration>
             </plugin>
-            <plugin>
+           <!-- <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${jacoco-maven-plugin.version}</version>
@@ -103,13 +103,13 @@
                         </goals>
                     </execution>
                 </executions>
-                <!-- fixes build
+                // fixes build
                 <configuration>
                     * Workaround for bug https://github.com/jacoco/jacoco/pull/40 *
                     <propertyName>coverageAgent</propertyName>
-                </configuration>
-                -->
-            </plugin>
+              //  </configuration>
+
+            </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>

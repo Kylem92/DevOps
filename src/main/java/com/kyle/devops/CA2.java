@@ -10,6 +10,8 @@ public class CA2{
 		//String dob = JOptionPane.showInputDialog("Please enter the date of birth in the form dd-mm-yyyy");
 		String dob = "24-11-1992";
 		dobValidator(dob);
+        System.exit(0);
+
 	}
 
 	public static boolean dobValidator(String dob) {
@@ -49,8 +51,8 @@ public class CA2{
 								dob = JOptionPane.showInputDialog("Invalid! Too many days for this month value - Please re-enter");
 							else
 							{
-
-								JOptionPane.showMessageDialog(null,"The valid date of birth you supplied is " + dob,"Date of Birth",JOptionPane.INFORMATION_MESSAGE);
+								validDateConfirm(dob);
+								//JOptionPane.showMessageDialog(null,"The valid date of birth you supplied is " + dob,"Date of Birth",JOptionPane.INFORMATION_MESSAGE);
 								valid = true;
 							}
 
@@ -75,7 +77,7 @@ public class CA2{
 
 		}
 		return true;
-		//System.exit(0);
+
 
 
 	}
@@ -84,6 +86,25 @@ public class CA2{
 	{
 		String dob = "24-11-1992";
 		return dob;
+	}
+
+	public static void validDateConfirm(String dob)
+	{
+
+		JOptionPane msg = new JOptionPane("The valid date of birth you supplied is " + dob, JOptionPane.WARNING_MESSAGE);
+		final JDialog dlg = msg.createDialog("Valid Date Confirmation");
+		dlg.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+		new Thread(() -> {
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            dlg.setVisible(false);
+        }).start();
+		dlg.setVisible(true);
+
+
 	}
 
 }
